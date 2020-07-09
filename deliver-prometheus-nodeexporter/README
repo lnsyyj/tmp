@@ -1,0 +1,18 @@
+
+# prometheus
+prometheus.service   放在   /etc/systemd/system/prometheus.service
+prometheus           放在   /usr/local/bin/prometheus
+prometheus.yml       放在   /etc/prometheus/prometheus.yml
+
+创建目录
+mkdir -p /var/lib/prometheus
+mkdir -p /etc/prometheus
+mkdir -p /etc/prometheus/console_libraries
+mkdir -p /etc/prometheus/consoles
+
+
+# node_exporter
+node_exporter.service   放在   /etc/systemd/system/node_exporter.service
+node_exporter           放在   /usr/local/bin/node_exporter
+
+

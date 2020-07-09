@@ -1,0 +1,57 @@
+#
+# Ansible managed
+#
+
+[Unit]
+Description=Prometheus Node Exporter
+After=network-online.target
+StartLimitInterval=0
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/local/bin/node_exporter \
+    --collector.diskstats \
+    --collector.netdev \
+    --collector.systemd \
+    --collector.textfile \
+    --collector.textfile.directory=/var/lib/node_exporter \
+    --no-collector.arp \
+    --no-collector.bcache \
+    --no-collector.conntrack \
+    --no-collector.edac \
+    --no-collector.entropy \
+    --no-collector.filefd \
+    --no-collector.filesystem \
+    --no-collector.hwmon \
+    --no-collector.infiniband \
+    --no-collector.ipvs \
+    --no-collector.loadavg \
+    --no-collector.mdadm \
+    --no-collector.netstat \
+    --no-collector.sockstat \
+    --no-collector.time \
+    --no-collector.uname \
+    --no-collector.vmstat \
+    --no-collector.wifi \
+    --no-collector.xfs \
+    --no-collector.zfs \
+    --no-collector.timex \
+    --web.listen-address=0.0.0.0:9100
+
+SyslogIdentifier=node_exporter
+Restart=always
+RestartSec=1
+
+PrivateTmp=yes
+ProtectHome=yes
+NoNewPrivileges=yes
+
+ProtectSystem=strict
+ProtectControlGroups=true
+ProtectKernelModules=true
+ProtectKernelTunables=yes
+
+[Install]
+WantedBy=multi-user.target

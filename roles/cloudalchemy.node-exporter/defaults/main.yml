@@ -19,4 +19,26 @@ node_exporter_enabled_collectors:
 #      ignored-mount-points: "^/(sys|proc|dev)($|/)"
 #      ignored-fs-types: "^(sys|proc|auto)fs$"
 
-node_exporter_disabled_collectors: []
+node_exporter_disabled_collectors: 
+  - arp 
+  - bcache 
+  - conntrack 
+  - edac 
+  - entropy 
+  - filefd 
+  - filesystem 
+  - hwmon 
+  - infiniband 
+  - ipvs 
+  - loadavg 
+  - mdadm 
+  - netstat 
+  - sockstat 
+  - textfile 
+  - time 
+  - uname 
+  - vmstat 
+  - wifi 
+  - xfs 
+  - zfs 
+  - timex

@@ -1,0 +1,32 @@
+#
+# Ansible managed
+#
+# http://prometheus.io/docs/operating/configuration/
+
+global:
+  evaluation_interval: 15s
+  scrape_interval: 15s
+  scrape_timeout: 10s
+  external_labels:
+      monitor: 'HesperMonitor'
+
+# xcstorage_name same as nova systemName
+scrape_configs:
+  - job_name: 'node'
+    static_configs:
+      - targets: ['192.168.40.103:9100']
+        labels:
+          xcstorage_name: "103"
+
+  - job_name: 'ceph'
+    static_configs:
+      - targets: ['192.168.40.103:9283']
+        labels:
+          xcstorage_name: "103"
+
+  - job_name: 'ceph-iscsi'
+    static_configs:
+      - targets: ['192.168.40.103:9287']
+        labels:
+          xcstorage_name: "103"
+

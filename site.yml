@@ -1,0 +1,9 @@
+---
+
+- hosts: maxcn-node-exporter
+  roles:
+    - cloudalchemy.node-exporter
+
+- hosts: maxcn-prometheus
+  roles:
+    - cloudalchemy.prometheus

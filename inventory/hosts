@@ -1,0 +1,5 @@
+[maxcn-node-exporter]
+192.168.40.100
+
+[maxcn-prometheus]
+192.168.40.100
